@@ -1,29 +1,39 @@
 # Lightweight Machine Learning Methodology for Wirelength Prediction Using Pre-Routing Features
 
-This repository contains the implementation of a **lightweight machine learning framework** for **early wirelength prediction** in VLSI design.  
-The methodology leverages **pre-routing design features** extracted from DEF/LEF files and applies **classical regression models** and **ensemble techniques** to estimate global wirelength prior to detailed routing.  
+This repository presents a **lightweight machine learning framework** for **early wirelength prediction** in VLSI design.  
+The approach leverages **pre-routing features** extracted from DEF/LEF files and applies **classical regression models** with ensemble techniques to estimate global wirelength before detailed routing.  
 
 ---
 
-## 🚀 Key Features
-- **DEF/LEF Parser**: Extracts design-level features such as DieWidth, DieHeight, NumInstances, NumValidPins, NumNets, etc.  
-- **Feature Ablation Analysis**: Identifies the most influential features for accurate prediction.  
-- **Model Training**: Implements regression models (KNeighbors, XGBoost, RandomForest, and Ensembles).  
-- **Lightweight Deployment**: Focus on small model size, low inference time, and minimal RAM usage.  
-- **Benchmarking**: Evaluated on **ISPD 2018, ISPD 2019, and CircuitNet N28** datasets.  
+## 🚀 Key Highlights
+- **DEF/LEF Parsing** → Extracts essential design features such as *DieWidth, DieHeight, NumInstances, NumValidPins, NumNets*, etc.  
+- **Feature Ablation Study** → Identifies the most influential features contributing to wirelength estimation.  
+- **Model Training** → Implements lightweight regressors (KNeighbors, XGBoost, RandomForest) and ensemble methods.  
+- **Resource-Efficient Deployment** → Prioritizes small model size, low latency, and minimal RAM usage.  
+- **Benchmarking** → Validated on **ISPD 2018, ISPD 2019, and CircuitNet-N28** datasets.  
 
 ---
 
-## 📊 Experimental Results
-- **Top Features Identified**: DieWidth, NumInstances, NumValidPins, DieHeight.  
-- **Best Models**: KNeighbors, XGBoost, RandomForest.  
-- **Ensemble Strategy**: Voting Ensemble combining the above models improved robustness.  
-- **Performance**: Achieved up to **R² = 0.95** with compact models suitable for low-resource deployment.  
-
-For detailed results, see [`experiments/`](./experiments).  
-<img width="1447" height="717" alt="flow" src="https://github.com/user-attachments/assets/65d5f4e0-0334-4187-8355-4d2d64cac395" />
+## 📊 Experimental Findings
+- **Key Predictors**: DieWidth, NumInstances, NumValidPins, and DieHeight emerged as dominant features.  
+- **Strong Performers**: KNeighbors, XGBoost, and RandomForest delivered the best results.  
+- **Robustness**: An ensemble strategy combining these models further improved accuracy.  
+- **Performance**: Achieved up to **R² = 0.95** with compact models suitable for low-resource environments.  
 
 ---
 
-## 📂 Repository Structure
+## 🖼️ Block Diagram
 
+The overall workflow of the proposed methodology is illustrated below:
+
+<p align="center">
+  <img src="figures/flow.png" alt="Block Diagram" width="800"/>
+</p>
+
+**Workflow Description**:  
+1. **Inputs** → DEF/LEF files are parsed to obtain *pre-routing features*.  
+2. **Feature Extraction** → Collects design-level attributes before routing.  
+3. **Modeling** → Trains lightweight ML regressors (KNeighbors, XGBoost, RandomForest) and ensembles.  
+4. **Output** → Provides early wirelength estimation in the **Physical Design Flow**, enabling faster design space exploration and optimization.  
+
+---
