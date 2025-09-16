@@ -25,10 +25,9 @@ The approach leverages **pre-routing features** extracted from DEF/LEF files and
 ## 🖼️ Block Diagram
 
 The overall workflow of the proposed methodology is illustrated below:
+<img width="1447" height="717" alt="flow" src="https://github.com/user-attachments/assets/51ff0a42-aa15-452c-9911-41cdf208e4f2" />
 
-<p align="center">
-  <img src="figures/flow.png" alt="Block Diagram" width="800"/>
-</p>
+
 
 **Workflow Description**:  
 1. **Inputs** → DEF/LEF files are parsed to obtain *pre-routing features*.  
